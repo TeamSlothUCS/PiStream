@@ -1,0 +1,53 @@
+----
+Moonlight Installation
+----
+
+Source: https://www.raspberrypi.org/magpi/stream-steam-games-to-your-raspberry-pi-tutorial/
+
+Install Dependencies in Pi Terminal:
+sudo apt-get install libopus0 libasound2 libudev0 libavahi-client3 libcurl3 libevdev2
+
+Configure Sound in Pi Terminal:
+
+sudo nano /boot/config.txt
+
+Add the following and Save:
+
+hdmi_drive=2
+
+----
+Download and Install Moonlight
+----
+
+Open Source List in Pi Terminal:
+
+sudo nano /etc/apt/sources.list
+
+Add the following and Save:
+
+deb http://archive.itimmer.nl/raspbian/moonlight jessie main
+
+
+In Pi Terminal:
+
+sudo apt-get update
+
+sudo apt-get install moonlight-embedded
+
+----
+Pair with PC
+----
+
+In Pi Terminal:
+
+moonlight pair [IP Address of Target PC]
+
+Confirm pairing on Target PC via the PIN displayed on CLI
+
+----
+Begin Stream
+----
+
+In Pi Terminal:
+
+moonlight stream [IP Address of Target PC]
